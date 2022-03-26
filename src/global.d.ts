@@ -12,7 +12,7 @@ interface IIconButton extends React.DetailedHTMLProps<React.ButtonHTMLAttributes
 
 interface IModal<T> {
     visible?: boolean
-    setVisible: Dispatch<SetStateAction<boolean>>
+    setVisible?: Dispatch<SetStateAction<boolean>>
     columns: IColumn<T>[];
     selectedItem: T;
     onClose: () => void;
@@ -35,8 +35,8 @@ interface IRow {
 }
 
 interface IRowItemProps {
-    value:DataType;
-    style: React.CSSProperties
+    value: DataType;
+    style?: React.CSSProperties
 }
 
 
@@ -56,7 +56,7 @@ interface IProps<T> {
     onRowSelected?: (row?: T) => void;
     rowStyle?: React.CSSProperties
     cellStyle?: React.CSSProperties
-    editable?:boolean
+    editable?: boolean
 }
 
 type DataType = string | number | boolean | URL;

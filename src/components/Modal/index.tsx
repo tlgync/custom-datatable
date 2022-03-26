@@ -68,4 +68,16 @@ export function Modal<T>({ visible, setVisible, columns, selectedItem, onClose, 
     )
 }
 
+Modal.propTypes = {
+    columns: PropTypes.array.isRequired,
+    visible: PropTypes.array,
+    setVisible: PropTypes.func,
+    selectedItem: PropTypes.object.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 
+};
+Modal.defaultProps = {
+    visible: false,
+    setVisible: prev => !prev
+};
