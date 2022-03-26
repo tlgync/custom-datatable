@@ -1,0 +1,57 @@
+.table-style {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    font-family: sans-serif;
+    min-width: 700px;
+    box-shadow: 0 0 20px var(--black-shadow);
+    table-layout:fixed;
+  
+    thead tr {
+      background-color: var(--orange-base);
+      color: var(--text-color);
+      text-align: left;
+    }
+  
+    th {
+      padding: 12px 15px;
+    }
+    td {
+      padding: 12px 15px;
+      position: relative;
+      overflow: hidden;
+      height: 30px;
+    }
+    tbody tr {
+      
+      cursor: pointer;
+
+      input {
+        border: none;
+        cursor: pointer;
+        width: 90%;
+        padding: 5px;
+        border-radius: 3px;
+        outline: none;
+        &:focus{
+          background-color: var(--secondary-color);
+        }
+      }
+  
+      &:nth-of-type(even) {
+        background-color: var(--cell-even);
+      }
+      &:nth-of-type(odd) {
+        background-color: var(--cell-odd);
+      }
+      &:last-of-type {
+        border-bottom: 2px solid var(--orange-base);
+      }
+    }
+  }
+  .greenActive {
+    color: var(--orange-base);
+  }
+
+
+  

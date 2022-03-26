@@ -1,0 +1,77 @@
+:root[data-theme="light"] {
+  --bg : #fff;
+  --modal-bg: #fefefe;
+  --primary-color: #fff;
+  --secondary-color: #DEE4ED;
+  --cell-even: #bbbbbb;
+  --cell-odd: #e4e4e4;
+  --text-color: #041C32;
+  --font-light: #b5b8bd;
+  --font-base: #2c343e;
+  --cell-light: #ddd;
+  --cell-mid: rgb(168, 168, 168);
+  --cell-dark: rgb(121, 121, 121);
+  // oranges
+  --orange-base: #f38b27;
+  --orange-light: rgba(243, 139, 39, 0.5);
+  --orange-draw: #ffbb79;
+
+  // shadow 
+  --black: rgba(0, 0, 0, 1);
+  --black-shadow: rgba(0, 0, 0, 0.15);
+}
+:root[data-theme="dark"] {
+  --bg : #041C32;
+  --modal-bg: #062b4e;
+  --primary-color: #041C32;
+  --secondary-color: #37474F;
+  --cell-even: #d1d1d1;
+  --cell-odd: #f1f1f1;
+  --text-color: #fff;
+  --font-light: #b5b8bd;
+  --font-base: #2c343e;
+  --cell-light: #ddd;
+  --cell-mid: rgb(168, 168, 168);
+  --cell-dark: rgb(121, 121, 121);
+  // oranges
+  --orange-base: #f38b27;
+  --orange-light: rgba(243, 139, 39, 0.5);
+  --orange-draw: #ffbb79;
+
+  // shadow 
+  --black: rgba(0, 0, 0, 1);
+  --black-shadow: rgba(0, 0, 0, 0.15);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  //font-family: ;
+ 
+  // test için yazıldı - silinece BÖ
+  //@include fontProcess(16px, --regularFont, 'Montserrat');
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: var(--bg);
+
+}
+ul, p{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// colors
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+

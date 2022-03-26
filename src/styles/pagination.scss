@@ -1,0 +1,50 @@
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    select {
+      border: 1px solid var(--cell-mid);
+      color: var(--cell-dark)
+    }
+    
+    span{
+      margin: 0 5px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--cell-mid);
+    }
+    select{
+      padding: 5px;
+      margin: 0 5px;
+      outline: none;
+      border-radius: 5px;
+    }
+    button{
+      width: 45px;
+      height: 45px;
+      border: none;
+      background-color: transparent;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      outline: none;
+      margin: 0 5px;
+      svg{
+        fill:var(--cell-dark);
+      }
+  
+      &:hover{
+        background-color: var(--cell-light);
+        border-radius: 50%;
+        box-shadow: 0px 8px 15px var(--black-shadow);
+      }
+    }
+    .paginationText {
+      color:var(--cell-mid);
+      font-family: sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  
+  }
