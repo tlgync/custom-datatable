@@ -31,7 +31,7 @@ You will also see any lint errors in the console.
 
 ```js
 [
-	{
+    {
       id: string,
       firstname: string,
       lastname: string,
@@ -61,12 +61,12 @@ const columns: IColumn<ITemp>[] = [
 ## Component
 ```javascript
 <DataTable
-	data={data}
-	columns={columns}
-	onRowSelected={(item) => console.log(item)} // {id: 0, firstname: 'tolga', lastname: 'yonca', email: 'ynctlg@gmail.com' }
-	rowStyle={{ width: 100, height: 60 }}
-	editable
-	// cellStyle={{background:'red'}}
+   data={data}
+   columns={columns}
+   onRowSelected={(item) => console.log(item)} // {id: 0, firstname: 'tolga', lastname: 'yonca', email: 'ynctlg@gmail.com' }
+   rowStyle={{ width: 100, height: 60 }}
+   editable
+   // cellStyle={{background:'red'}}
 />
 ```
 
