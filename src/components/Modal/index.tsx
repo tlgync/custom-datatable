@@ -1,7 +1,9 @@
 
 import { useEffect, useState, ChangeEvent } from 'react'
 
-export function Modal<T>({ visible, setVisible, columns, selectedItem, setSelectedItem, data, setData, onClose, onSubmit }: IModal<T>) {
+import PropTypes from 'prop-types';
+
+export function Modal<T>({ visible, setVisible, columns, selectedItem, onClose, onSubmit }: IModal<T>) {
     const [newSelectedItem, setNewSelectedItem] = useState<T>(selectedItem);
     const [disabled, setDisabled] = useState<boolean>(true); //button disable
     const [initial, setInitial] = useState(selectedItem); //initial item
@@ -65,3 +67,5 @@ export function Modal<T>({ visible, setVisible, columns, selectedItem, setSelect
         </div>
     )
 }
+
+

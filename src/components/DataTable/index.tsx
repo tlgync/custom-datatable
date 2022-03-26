@@ -1,7 +1,8 @@
 import { Fragment, useEffect, useState } from 'react';
+import PropTypes from 'prop-types'
 
 //components
-import { ColumnItem, Pagination, Table, TBody, Modal, Row ,RowItem } from '..';
+import { ColumnItem, Pagination, Table, TBody, Modal, Row, RowItem } from '..';
 
 // utils
 import { generateRows } from '../../utils/generateRows/index';
@@ -10,11 +11,11 @@ import { generateRows } from '../../utils/generateRows/index';
 
 
 function DataTable<T>({ columns, data, onRowSelected, rowStyle, cellStyle, editable }: IProps<T>) {
-    const [activeIndex, setActiveIndex] = useState<number>(-1); 
+    const [activeIndex, setActiveIndex] = useState<number>(-1);
     const [disabled, setDisabled] = useState<boolean>(false)
     const [newData, setNewData] = useState<T[]>(data); // set data
     const [visible, setVisible] = useState<boolean>(false) // modal visible
-    const [pagination, setPagination] = useState<number>(10); 
+    const [pagination, setPagination] = useState<number>(10);
     const [pageSize, setPageSize] = useState<number>(10);
     const [page, setPage] = useState<number>(1);
     const [selectedItem, setSelectedItem] = useState<T>(null);
@@ -28,7 +29,7 @@ function DataTable<T>({ columns, data, onRowSelected, rowStyle, cellStyle, edita
         setPage(1);
         setPageSize(pagination);
     }, [pagination]);
-    
+
     return (
         <>
             <Table className="table-style">
@@ -43,12 +44,12 @@ function DataTable<T>({ columns, data, onRowSelected, rowStyle, cellStyle, edita
                     {newData.map((item, index) => (
                         <Row
                             rowStyle={
-                                {pointerEvents: editable ? 'auto' : 'none', ...rowStyle}
+                                { pointerEvents: editable ? 'auto' : 'none', ...rowStyle }
                             }
                             key={index}
                             className={`${activeIndex === index ? "greenActive" : ""}`}
                             onClick={() => {
-                                if(editable){
+                                if (editable) {
                                     if (activeIndex === index) {
                                         setActiveIndex(-1);
                                         setSelectedItem(null);
@@ -62,7 +63,7 @@ function DataTable<T>({ columns, data, onRowSelected, rowStyle, cellStyle, edita
                                     setDisabled(!disabled);
                                     setVisible(!visible);
                                 }
-                                
+
                             }}
                         >
                             {columns.map((col, i) => {
@@ -103,14 +104,28 @@ function DataTable<T>({ columns, data, onRowSelected, rowStyle, cellStyle, edita
                     generateRows(temp, page, pageSize, setNewData);
                 }}
                 setVisible={setVisible}
-                data={newData}
-                setData={setNewData}
                 visible={visible}
                 columns={columns}
                 selectedItem={selectedItem}
-                setSelectedItem={setSelectedItem} />
+            />
         </>
     );
 }
 
 export default DataTable;
+
+DataTable.propTypes = {
+    columns: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
+    onRowSelected: PropTypes.func,
+    rowStyle: PropTypes.object,
+    cellStyle: PropTypes.object,
+    editable: PropTypes.bool,
+
+};
+DataTable.defaultProps = {
+    onRowSelected: () => { },
+    rowStyle: {},
+    cellStyle: {},
+    editable: true
+};

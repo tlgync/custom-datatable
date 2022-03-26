@@ -5,7 +5,9 @@ interface IColumnItem {
 }
 
 interface IIconButton extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    icon: JSX.Element | JSX.Element[]
+    icon: JSX.Element | JSX.Element[];
+    onClick: () => void;
+    disabled: boolean;
 }
 
 interface IModal<T> {
@@ -13,9 +15,6 @@ interface IModal<T> {
     setVisible: Dispatch<SetStateAction<boolean>>
     columns: IColumn<T>[];
     selectedItem: T;
-    setSelectedItem: Dispatch<SetStateAction<T>>
-    data: T[]
-    setData: Dispatch<SetStateAction<T[]>>
     onClose: () => void;
     onSubmit: (row: T) => void;
 }
@@ -61,7 +60,6 @@ interface IProps<T> {
 }
 
 type DataType = string | number | boolean | URL;
-type ThemeType = "greenTable" | "blueTable"
 
 interface IColumn<T> {
     name: string
