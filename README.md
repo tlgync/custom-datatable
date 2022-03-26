@@ -31,7 +31,7 @@ You will also see any lint errors in the console.
 
 ```js
 [
-	{
+    {
       id: string,
       firstname: string,
       lastname: string,
