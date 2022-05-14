@@ -9,6 +9,7 @@ export interface ITemp {
   firstname: string;
   lastname: string;
   email: string;
+  status: boolean;
 }
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
     {
       name: "Email",
       selector: row => row.email
+    },
+    {
+      name: "Status",
+      selector: row => row.status
     },
   ];
 

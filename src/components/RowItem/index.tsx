@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 
-export const RowItem = ({ value, style }: IRowItemProps) => (
-    <td style={style}>
-        {value}
-    </td>
-)
+
+export const RowItem = ({ value, style }: IRowItemProps) => {
+    return (
+        <td style={style} >
+            {[typeof(value) === 'boolean' ? value.toString() : value]}
+        </td>
+    )
+}
 
 
 RowItem.propTypes = {

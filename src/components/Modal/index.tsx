@@ -49,7 +49,9 @@ export function Modal<T>({ visible, setVisible, columns, selectedItem, onClose, 
                 {newSelectedItem &&
                     columns.map((col, index) => (
                         <div key={index.toString()} className="form__group field">
+                            {console.log(Object.keys(selectedItem)[index + 1])}
                             <input
+                                disabled={col.name === "Status"}
                                 onChange={handleChange}
                                 value={newSelectedItem[Object.keys(selectedItem)[index + 1]]}
                                 type="input"
@@ -72,12 +74,13 @@ Modal.propTypes = {
     columns: PropTypes.array.isRequired,
     visible: PropTypes.array,
     setVisible: PropTypes.func,
-    selectedItem: PropTypes.object.isRequired,
+    selectedItem: PropTypes.object,
     onClose: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
 
 };
 Modal.defaultProps = {
     visible: false,
-    setVisible: prev => !prev
+    setVisible: prev => !prev,
+    selectedItem : {}
 };

@@ -59,7 +59,22 @@ interface IProps<T> {
     editable?: boolean
 }
 
-type DataType = string | number | boolean | URL;
+interface IUri {
+    hash: string;
+    host: string;
+    hostname: string;
+    href: string;
+    readonly origin: string;
+    password: string;
+    pathname: string;
+    port: string;
+    protocol: string;
+    search: string;
+    username: string;
+    toString(): string;
+}
+
+type DataType = string | number | boolean | IUri;
 
 interface IColumn<T> {
     name: string
@@ -78,3 +93,5 @@ interface IGenerateRowProps<T> {
     pageSize: number;
     setNewData: Dispatch<SetStateAction<T[]>>;
 }
+
+
