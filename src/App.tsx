@@ -34,6 +34,8 @@ function App() {
     },
   ];
 
+  console.log("git test")
+
 
   // set initial theme
   useEffect(() => {
