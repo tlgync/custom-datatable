@@ -34,7 +34,7 @@ function App() {
     },
   ];
 
-  console.log("git test 3")
+  
 
 
   // set initial theme
